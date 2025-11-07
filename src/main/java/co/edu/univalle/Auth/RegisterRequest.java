@@ -1,5 +1,6 @@
 package co.edu.univalle.Auth;
 
+import co.edu.univalle.Models.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,9 +11,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RegisterRequest {
-    String user;
+    String username;
     String password;
     String firstname;
     String lastname;
+    String country;
     String email;
+    Role role;
 }
