@@ -39,18 +39,19 @@
   outline: none;
 }
 
-.login-button {
+.login-button,
+.cancel-button {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
+  margin-top: 10px;
   border: none;
-  border-radius: 8px;
-  background-color: #3498db;
+  border-radius: 5px;
+  background-color: #007bff;
   color: white;
-  font-size: 16px;
-  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 16px;
 }
+
 
 .login-button:hover {
   background-color: #2980b9;
@@ -64,4 +65,24 @@
 
 .message.error {
   color: #e74c3c;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.register-button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.register-button:hover {
+  background-color: #005fa3;
 }
