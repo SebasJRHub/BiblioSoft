@@ -41,6 +41,9 @@ public class BookController {
 
         return ResponseEntity.ok("Libro eliminado");
     }
-
+    @GetMapping("/search")
+    public List<BookModel> buscarlibros(@RequestParam(required = false) String query) {
+        return bookService.searchBooks(query);
+    }
 
 }

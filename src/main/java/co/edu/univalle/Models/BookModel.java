@@ -25,4 +25,9 @@ public class BookModel  {
     private String editorial;
     @Column(name = "bk-estado" ,length = 30, nullable = false)
     private String estado;
+    @Column(name = "bk-autor", length = 50, nullable = false)
+    private String autor;
+    @Column(name = "bk-anio", length = 10, nullable = false)
+    private Long anio;
+
 }
