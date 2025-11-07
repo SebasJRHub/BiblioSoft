@@ -37,9 +37,19 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody UserModel user) {
-        String message = authService.register(user);
-        return ResponseEntity.ok(message);
+    public ResponseEntity<?> register(@RequestBody UserModel user) {
+        // Verificar si el usuario ya existe
+        if (userRepository.findByUsername(user.getUsername()).isPresent()) {
+            return ResponseEntity
+                    .badRequest()
+                    .body("El nombre de usuario ya está en uso");
+        }
+
+        // Encriptar contraseña antes de guardar
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        userRepository.save(user);
+
+        return ResponseEntity.ok("Usuario registrado exitosamente ✅");
     }
 
     @PutMapping("/change-password")
