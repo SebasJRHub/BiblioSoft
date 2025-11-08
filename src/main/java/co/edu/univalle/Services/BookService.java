@@ -4,8 +4,6 @@ import co.edu.univalle.Models.BookModel;
 import co.edu.univalle.Repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.awt.print.Book;
 import java.util.List;
 
 @Service
@@ -29,12 +27,15 @@ public class BookService {
     public void deleteBook(Long id){
         bookRepository.deleteById(id);
     }
+
     public List<BookModel> findAll(){
         return bookRepository.findAll();
     }
+
     public List<BookModel> findByTitle(String titulo){
         return bookRepository.findByTituloContainingIgnoreCase(titulo);
     }
+
     public List<BookModel> searchBooks(String query) {
         if (query == null || query.trim().isEmpty()) {
             return bookRepository.findAll();

@@ -10,12 +10,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface BookRepository extends JpaRepository<BookModel,Long> {
-
+public interface BookRepository extends JpaRepository<BookModel, Long> {
 
     List<BookModel> findByTituloContainingIgnoreCase(String titulo);
 
     Optional<BookModel> findById(Long id);
+
     @Query("""
         SELECT b FROM BookModel b
         WHERE LOWER(b.autor) LIKE LOWER(CONCAT('%', :query, '%'))
@@ -23,5 +23,4 @@ public interface BookRepository extends JpaRepository<BookModel,Long> {
            OR LOWER(b.editorial) LIKE LOWER(CONCAT('%', :query, '%'))
     """)
     List<BookModel> searchBooks(@Param("query") String query);
-
 }

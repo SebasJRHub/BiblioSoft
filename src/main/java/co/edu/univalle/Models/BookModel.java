@@ -5,29 +5,32 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.repository.support.Repositories;
 
 @Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Books")
-public class BookModel  {
+@Table(name = "books")
+public class BookModel {
 
     @Id
-    @Column(name = "bk-id",nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "bk-id", nullable = false)
     private Long id;
-    @Column(name = "bk-titulo" ,length = 50, nullable = false)
-    private String titulo;
-    @Column(name = "bk-editorial",length = 70, nullable = false)
-    private String editorial;
-    @Column(name = "bk-estado" ,length = 30, nullable = false)
-    private String estado;
-    @Column(name = "bk-autor", length = 50, nullable = false)
-    private String autor;
-    @Column(name = "bk-anio", length = 10, nullable = false)
-    private Long anio;
 
+    @Column(name = "bk-titulo", length = 50, nullable = false)
+    private String titulo;
+
+    @Column(name = "bk-autor", length = 70, nullable = false)
+    private String autor;
+
+    @Column(name = "bk-editorial", length = 70, nullable = false)
+    private String editorial;
+
+    @Column(name = "bk-estado", length = 30, nullable = false)
+    private String estado;
+
+    @Column(name = "bk-anio", nullable = false)
+    private int anio;
 }

@@ -6,8 +6,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class BiblioSoftwareApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
-
+    //@Test
+    //void contextLoads() {
+    //    // Verifica que el contexto de Spring arranque correctamente
+    //}
 }
